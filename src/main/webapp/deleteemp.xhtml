@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>ToDo's App</title>
+    <style>
+    .Bimage{
+     background-image:url(#{request.contextPath}imag.jpg);
+ }
+   .message{
+   color:white;
+}
+  .box
+  {
+  background-color: black;
+    width: 250px;
+    border: 5px solid cyan;
+    padding: 10px;
+    margin: 125px;
+  }
+    </style>
+  </h:head>
+    
+ <h:body style="background: url(imag.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+    
+    <h:messages globalOnly="true" />
+    <center>
+    <marquee><h3 class="message">Delete Employee</h3></marquee>
+    <hr/>
+      <h:form>
+        <h:panelGrid columns="3">
+        
+          <h:outputLabel style="color:white">Employee Id</h:outputLabel>
+          <h:inputText value="#{empBean.eid}" id="id" />
+          <br/>      
+          <h:commandButton value="Delete" action="#{empBean.deleteemp()}"/>
+        </h:panelGrid>
+      </h:form>
+      
+    <br/>
+    <h:outputText style="color:red" value="#{empBean.response}"></h:outputText>
+    
+    <br/>
+    
+    </center>
+  </h:body>
+</html>
